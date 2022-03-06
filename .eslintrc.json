@@ -7,8 +7,7 @@
   },
   "extends": [
     "airbnb-base",
-    "prettier",
-    "plugin:node/recommended"
+    "prettier"
   ],
   "plugins": [
     "prettier"
@@ -23,5 +22,6 @@
     "class-methods-use-this": "off",
     "strict": ["error", "global"],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
-  }
+  },
+  "ignorePatterns": ["dist/"]
 }
