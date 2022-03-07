@@ -4,16 +4,16 @@ function headerNav() {
 
   const links = [
     {
-      title: 'Home',
-      href: '#home',
-    },
-    {
       title: 'Menu',
       href: '#menu',
     },
     {
       title: 'Contacts',
       href: '#contacts',
+    },
+    {
+      title: 'About',
+      href: '#about',
     },
   ];
 
