@@ -15,7 +15,9 @@ main.appendChild(homeContent);
 // TODO: place component files (js, styles, assets) in separate folders
 
 // switch logic
-const navLinks = document.querySelectorAll('.header-nav__link');
+const navLinks = Array.from(document.querySelectorAll('.header-nav__link'));
+const logoLink = document.querySelector('.header-logo');
+navLinks.push(logoLink);
 
 const pageContent = {
   home: homeContent,
@@ -24,15 +26,19 @@ const pageContent = {
   about: aboutContent,
 };
 
+function getPageName(e) {
+  const page = e.target.getAttribute('href').slice(1);
+  return page === '#' ? 'home' : page;
+}
+
 navLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
-    const href = e.target.getAttribute('href');
-    const type = href.slice(1);
+    const page = getPageName(e);
     // TODO: add active class
 
     // update UI
     // TODO: do something like UI.displayPage(page) maybe
     main.innerHTML = '';
-    main.appendChild(pageContent[type]);
+    main.appendChild(pageContent[page]);
   });
 });
