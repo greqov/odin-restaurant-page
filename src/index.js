@@ -1,9 +1,6 @@
 import ui from './ui';
 import pageLayout from './pageLayout';
 import homeContent from './homeContent';
-import menuContent from './menuContent';
-import aboutContent from './aboutContent';
-import contactsContent from './contactsContent';
 import './styles.css';
 
 const UI = ui();
@@ -22,30 +19,14 @@ const navLinks = Array.from(document.querySelectorAll('.header-nav__link'));
 const logoLink = document.querySelector('.header-logo');
 navLinks.push(logoLink);
 
-const pageContent = {
-  home: homeContent,
-  menu: menuContent,
-  contacts: contactsContent,
-  about: aboutContent,
-};
-
-function getPageName(e) {
-  const page = e.target.getAttribute('href').slice(1);
-  return page === '#' ? 'home' : page;
-}
-
 navLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
-    const page = getPageName(e);
+    const page = UI.getPageName(e);
     // TODO: add active class
 
     // Avoid rerender the same page
     if (page === UI.currentPage) return;
 
-    // update UI
-    // TODO: do something like UI.displayPage(page) maybe
-    main.innerHTML = '';
-    main.appendChild(pageContent[page]);
-    UI.currentPage = page;
+    UI.displayPage(page);
   });
 });
