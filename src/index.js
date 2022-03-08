@@ -1,9 +1,12 @@
+import ui from './ui';
 import pageLayout from './pageLayout';
 import homeContent from './homeContent';
 import menuContent from './menuContent';
 import aboutContent from './aboutContent';
 import contactsContent from './contactsContent';
 import './styles.css';
+
+const UI = ui();
 
 document.body.appendChild(pageLayout);
 
@@ -36,10 +39,13 @@ navLinks.forEach((link) => {
     const page = getPageName(e);
     // TODO: add active class
 
+    // Avoid rerender the same page
+    if (page === UI.currentPage) return;
+
     // update UI
     // TODO: do something like UI.displayPage(page) maybe
-    // TODO: check current page, don't update home to home
     main.innerHTML = '';
     main.appendChild(pageContent[page]);
+    UI.currentPage = page;
   });
 });
