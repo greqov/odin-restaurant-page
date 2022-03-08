@@ -1,3 +1,4 @@
+import pageLayout from './pageLayout';
 import homeContent from './homeContent';
 import menuContent from './menuContent';
 import aboutContent from './aboutContent';
@@ -24,8 +25,15 @@ function ui() {
     this.currentPage = page;
   }
 
+  function init() {
+    document.body.appendChild(pageLayout);
+    // TODO: check hash on load
+    this.displayPage(this.currentPage);
+  }
+
   return {
     currentPage: 'home',
+    init,
     getPageName,
     displayPage,
   };
