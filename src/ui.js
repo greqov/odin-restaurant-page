@@ -3,6 +3,7 @@ import homeContent from './homeContent';
 import menuContent from './menuContent';
 import aboutContent from './aboutContent';
 import contactsContent from './contactsContent';
+import notFoundContent from './notFoundContent';
 
 function ui() {
   const pageContent = {
@@ -10,6 +11,7 @@ function ui() {
     menu: menuContent,
     contacts: contactsContent,
     about: aboutContent,
+    notFound: notFoundContent,
   };
 
   function getPageName(e) {
@@ -20,9 +22,13 @@ function ui() {
   function displayPage(page) {
     // NOTE: is it okay to look for elem each time?
     const main = document.querySelector('.page-main');
+    let currPage = page;
+
+    if (!(currPage in pageContent)) currPage = 'notFound';
+
     main.innerHTML = '';
-    main.appendChild(pageContent[page]);
-    this.currentPage = page;
+    main.appendChild(pageContent[currPage]);
+    this.currentPage = currPage;
   }
 
   function init() {

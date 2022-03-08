@@ -7,7 +7,7 @@ function headerNav(list) {
   list.forEach(({ title, href }) => {
     navListItems += `
     <li class="header-nav__item">
-      <a href="${href}" class="header-nav__link">${title}</a>
+      <a href="${href}" class="header-nav__link js-nav-link">${title}</a>
     </li>`;
   });
 
@@ -21,7 +21,7 @@ header.classList.add('page-header');
 
 const logo = document.createElement('a');
 logo.setAttribute('href', '#');
-logo.classList.add('header-logo');
+logo.classList.add('header-logo', 'js-nav-link');
 logo.textContent = 'Logo';
 header.appendChild(logo);
 // TODO: add image to logo
