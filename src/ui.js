@@ -27,7 +27,8 @@ function ui() {
 
   function init() {
     document.body.appendChild(pageLayout);
-    // TODO: check hash on load
+    const { hash } = document.location;
+    this.currentPage = hash ? hash.slice(1) : 'home';
     this.displayPage(this.currentPage);
   }
 

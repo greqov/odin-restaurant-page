@@ -57,6 +57,7 @@ function pageLayout() {
 
   const main = document.createElement('main');
   main.classList.add('page-main');
+  main.textContent = 'Loading...';
 
   [header, main, footer].forEach((el) => pageContainer.appendChild(el));
 
