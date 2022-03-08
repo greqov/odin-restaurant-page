@@ -6,19 +6,20 @@ UI.init();
 
 // TODO: place component files (js, styles, assets) in separate folders
 
-// switch logic
-const navLinks = Array.from(document.querySelectorAll('.header-nav__link'));
-const logoLink = document.querySelector('.header-logo');
-navLinks.push(logoLink);
+(function switchPagesHandler() {
+  const navLinks = Array.from(document.querySelectorAll('.header-nav__link'));
+  const logoLink = document.querySelector('.header-logo');
+  navLinks.push(logoLink);
 
-navLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    const page = UI.getPageName(e);
-    // TODO: add active class
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const page = UI.getPageName(e);
+      // TODO: add active class
 
-    // Avoid rerender the same page
-    if (page === UI.currentPage) return;
+      // Avoid rerender the same page
+      if (page === UI.currentPage) return;
 
-    UI.displayPage(page);
+      UI.displayPage(page);
+    });
   });
-});
+})();
