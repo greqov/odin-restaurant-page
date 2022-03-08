@@ -52,7 +52,7 @@ function pageLayout() {
 
   const footer = document.createElement('footer');
   footer.classList.add('page-footer');
-  footer.textContent = 'footer info';
+  footer.innerHTML = `<a href="https://github.com/greqov/odin-restaurant-page" target="_blank">Github</a>`;
   // TODO: add link to github (with svg icon?)
 
   const main = document.createElement('main');

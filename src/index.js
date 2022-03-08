@@ -38,6 +38,7 @@ navLinks.forEach((link) => {
 
     // update UI
     // TODO: do something like UI.displayPage(page) maybe
+    // TODO: check current page, don't update home to home
     main.innerHTML = '';
     main.appendChild(pageContent[page]);
   });
