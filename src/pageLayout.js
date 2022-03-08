@@ -1,3 +1,5 @@
+import footer from './footer';
+
 // TODO: move navigation to own module?
 function headerNav() {
   const nav = document.createElement('nav');
@@ -49,11 +51,6 @@ function pageLayout() {
   // TODO: use data from JSON?
 
   header.appendChild(nav);
-
-  const footer = document.createElement('footer');
-  footer.classList.add('page-footer');
-  footer.innerHTML = `<a href="https://github.com/greqov/odin-restaurant-page" target="_blank">Github</a>`;
-  // TODO: add link to github (with svg icon?)
 
   const main = document.createElement('main');
   main.classList.add('page-main');
