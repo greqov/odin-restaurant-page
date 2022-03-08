@@ -1,5 +1,5 @@
 import ui from './ui';
-import './styles.css';
+import './css/styles.css';
 
 const UI = ui();
 UI.init();
