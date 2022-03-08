@@ -39,7 +39,7 @@ function pageLayout() {
   header.classList.add('page-header');
 
   const logo = document.createElement('a');
-  logo.setAttribute('href', '/#');
+  logo.setAttribute('href', '#');
   logo.classList.add('header-logo');
   logo.textContent = 'Logo';
   header.appendChild(logo);

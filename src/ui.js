@@ -14,7 +14,7 @@ function ui() {
 
   function getPageName(e) {
     const page = e.target.getAttribute('href').slice(1);
-    return page === '#' ? 'home' : page;
+    return page === '' ? 'home' : page;
   }
 
   function displayPage(page) {
